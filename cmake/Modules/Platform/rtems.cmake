@@ -14,6 +14,10 @@ set(SOEM_LIB_INSTALL_DIR ${LIB_DIR})
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${HOST_C_FLAGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${HOST_CXX_FLAGS}")
 
+include_directories(
+  ${RTEMS_TOOLS_PATH}/i386-rtems6/pc386/lib/include/
+)
+
 if(NOT ${HOST_LIBS} STREQUAL "")
   set(OS_LIBS "rtemscpu bsd ${HOST_LIBS}")
 else()

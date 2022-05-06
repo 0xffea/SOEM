@@ -91,7 +91,7 @@ static void ecx_clear_rxbufstat(int *rxbufstat)
 int ecx_setupnic(ecx_portt *port, const char *ifname, int secondary)
 {
    int i;
-   int r, rval;
+   int rval;
    struct timeval timeout;
    struct ifreq ifr;
    int *bpf;
@@ -368,7 +368,7 @@ int ecx_outframe_red(ecx_portt *port, uint8 idx)
       port->redport->rxbufstat[idx] = EC_BUF_TX;
       if (write(port->redport->sockhandle, &(port->txbuf2), port->txbuflength2) == -1)
       {
-         (*stack->rxbufstat)[idx] = EC_BUF_EMPTY;
+         // (*stack->rxbufstat)[idx] = EC_BUF_EMPTY;
       }
       pthread_mutex_unlock( &(port->tx_mutex) );
    }
