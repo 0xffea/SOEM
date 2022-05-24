@@ -17,6 +17,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${HOST_CXX_FLAGS}")
 include_directories(
   ${RTEMS_TOOLS_PATH}/i386-rtems6/pc686/lib/include/
   ${RTEMS_TOOLS_PATH}/riscv-rtems6/rv32imafc/lib/include/
+  ${RTEMS_TOOLS_PATH}/lm32-rtems6/rv32imafc/lib/include/
 )
 
 if(NOT ${HOST_LIBS} STREQUAL "")
